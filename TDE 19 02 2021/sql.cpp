@@ -1,0 +1,24 @@
+//
+//  sql.cpp
+//  TDE 19 02 2021
+//
+//  Created by Marco Gretter on 02/12/25.
+//
+/*
+Es1:
+ 
+ Scrivere una query che estrae per ogni cliente il numero totale di noleggi.
+ SELECT count(*) As TotNoleggi
+ FROM Noleggio
+ GROUP BY CF
+ 
+ 
+ Es2:
+ 
+ Scrivere una query che estrae i clienti che non hanno mai noleggiato auto che costano più di 100 euro al giorno.
+ SELECT DISTINCT C1.CF
+ FROM Cliente C1
+ WHERE C1.CF NOT IN (SELECT N1.CF
+                     FROM Noleggio N1
+                     WHERE N1.CostoAlGiorno>100)
+*/
