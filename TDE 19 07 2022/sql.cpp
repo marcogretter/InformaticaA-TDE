@@ -1,0 +1,26 @@
+//
+//  sql.cpp
+//  TDE 19 07 2022
+//
+//  Created by Marco Gretter on 02/12/25.
+//
+/*
+ES1:
+ 
+ SELECT C.Nome
+ FROM Cliente C,Hotel H,Prenotazione P
+ WHERE H.CodHotel=P.CodHotel AND
+       C.CodiceFiscale=P.CfCliente AND
+       C.Città='Milano'
+ GROUP BY C.CodiceFiscale
+ HAVING P.SingolaODoppia NOT IN (SELECT SingolaODoppia
+                              FROM Prenotazione
+                              WHERE SingolaODoppia='Singola')
+ 
+ ES2:
+ 
+ SELECT CodHotel,SUM(NumeroGiorni)
+ FROM Prenotazione
+ WHERE DataInizio='1/1/2021'
+ GROUP BY CodHotel
+*/
