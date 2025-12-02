@@ -1,0 +1,27 @@
+//
+//  sql.cpp
+//  TDE 17 02 2022
+//
+//  Created by Marco Gretter on 02/12/25.
+//
+/*
+ ES1:
+
+ SELECT O.Nazione,G.nome
+ FROM Organizzazione O,Giocatore G,Partecipazione P
+ WHERE O.ANNO=P.ANNO and
+       G.ID=P.IDGIOCATORE
+ GROUP BY P.Nazione,G.ID
+ HAVING count(*)>=ALL(SELECT GoalSegnati
+                      FROM PARTECIPAZIONE P1
+                      WHERE P1.Nazione=P.Nazione
+                      GROUP BY P1.IdGiocatore)
+  
+  
+  ES2:
+  
+  SELECT count(p.GoalSegnati)
+  FROM SQUADRA S JOIN PARTECIPAZIONE P
+         ON S.ANNO=P.ANNO
+  GROUP BY S.Allenatore
+ */
